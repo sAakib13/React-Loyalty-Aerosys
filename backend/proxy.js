@@ -23,14 +23,14 @@ const API_BASE_URL = process.env.API_BASE_URL;
 const PROJECT_ID = process.env.PROJECT_ID;
 const API_KEY = process.env.API_KEY;
 
-const FETCH_USER_DATA_URL = `${API_BASE_URL}/projects/${PROJECT_ID}/tables/DT932fc0bd7948618d/rows`;
-const FETCH_ITEMS_DATA_URL = `${API_BASE_URL}/projects/${PROJECT_ID}/tables/DT2604fb24df89fbf2/rows`;
+const FETCH_USER_DATA_URL = `${API_BASE_URL}/projects/${PROJECT_ID}/tables/DT17df762382dd3f3c/rows`;
+const FETCH_ITEMS_DATA_URL = `${API_BASE_URL}/projects/${PROJECT_ID}/tables/DTb965fe028d603020/rows`;
 const FETCH_CONTACT_URL = `${API_BASE_URL}/projects/${PROJECT_ID}/contacts`;
-const OTP_GENERATE_URL = `${API_BASE_URL}/projects/${PROJECT_ID}/services/SVa4c8ef67ab98ee8c/invoke`;
-const OTP_VALIDATE_URL = `${API_BASE_URL}/projects/${PROJECT_ID}/services/SVbf918bf3363669c8/invoke`;
-const USER_REGISTER_URL = `${API_BASE_URL}/projects/${PROJECT_ID}/services/SV70a0b59d483d613c/invoke`;
-const REDEMPTION_URL = `${API_BASE_URL}/projects/${PROJECT_ID}/services/SV98e376b61115caec/invoke`;
-const CALCULATED_REDEMPTION_URL = `${API_BASE_URL}/projects/${PROJECT_ID}/services/SV2041e026e3027869/invoke`;
+const OTP_GENERATE_URL = `${API_BASE_URL}/projects/${PROJECT_ID}/services/SVf48f1eddcbd5f9d0/invoke`;
+const OTP_VALIDATE_URL = `${API_BASE_URL}/projects/${PROJECT_ID}/services/SV44a8ca886b47f4ae/invoke`;
+const USER_REGISTER_URL = `${API_BASE_URL}/projects/${PROJECT_ID}/services/SVc6a0370d7991f0be/invoke`;
+const REDEMPTION_URL = `${API_BASE_URL}/projects/${PROJECT_ID}/services/SV8350cdbe330192d3/invoke`;
+const CALCULATED_REDEMPTION_URL = `${API_BASE_URL}/projects/${PROJECT_ID}/services/SV0d67ff9ea34e6989/invoke`;
 
 // Helper function to create headers
 const getHeaders = () => ({
@@ -208,13 +208,11 @@ app.post("/register-user", async (req, res) => {
       "Error registering user:",
       error.response?.data || error.message
     );
-    res
-      .status(500)
-      .json({
-        success: false,
-        message: "Failed to register user",
-        error: error.response?.data || error.message,
-      });
+    res.status(500).json({
+      success: false,
+      message: "Failed to register user",
+      error: error.response?.data || error.message,
+    });
   }
 });
 
@@ -245,13 +243,11 @@ app.post("/redemption", async (req, res) => {
       "Error processing redemption:",
       error.response?.data || error.message
     );
-    res
-      .status(500)
-      .json({
-        success: false,
-        message: "Redemption failed.",
-        error: error.message,
-      });
+    res.status(500).json({
+      success: false,
+      message: "Redemption failed.",
+      error: error.message,
+    });
   }
 });
 
@@ -282,13 +278,11 @@ app.post("/calculatedRedemption", async (req, res) => {
       "Error processing calculated redemption:",
       error.response?.data || error.message
     );
-    res
-      .status(500)
-      .json({
-        success: false,
-        message: "Calculated redemption failed.",
-        error: error.message,
-      });
+    res.status(500).json({
+      success: false,
+      message: "Calculated redemption failed.",
+      error: error.message,
+    });
   }
 });
 
