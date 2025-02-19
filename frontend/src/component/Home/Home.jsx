@@ -1,22 +1,27 @@
-import React from 'react'
-import clouds from "../../assets/clouds.png"
+import React from "react";
+import clouds from "../../assets/clouds.png";
+import Component from "../intercome";
 
 const Home = () => {
-    return (
-        <div>
-            <div className="bg-primary h-[70vh] bg-cover bg-center" style={{ backgroundImage: `url(${clouds})` }}>
-                <div className="flex flex-col items-center justify-center h-[70vh] ">
-                    <h1 className=" text-white lg:text-5xl p-2 sm:text-3xl">
-                        Messaging when it matters
-                    </h1>
-                    <h4 className=" text-white lg:text-2xl p-2 sm:text-sm">
-                        The essential mobile communications platform for high-impact organizations.
-                    </h4>
-                </div>
-            </div>
-
+  return (
+    <div>
+      <div
+        className="h-[70vh] bg-primary bg-cover bg-center"
+        style={{ backgroundImage: `url(${clouds})` }}
+      >
+        <div className="flex h-[70vh] flex-col items-center justify-center">
+          <h1 className="p-2 text-white sm:text-3xl lg:text-5xl">
+            Messaging when it matters
+          </h1>
+          <h4 className="p-2 text-white sm:text-sm lg:text-2xl">
+            The essential mobile communications platform for high-impact
+            organizations.
+          </h4>
         </div>
-    )
-}
+      </div>
+      <Component />
+    </div>
+  );
+};
 
-export default Home
+export default Home;
